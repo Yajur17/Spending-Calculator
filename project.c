@@ -34,7 +34,7 @@ int save(){
 int balsheet(int inc, int saved){
     int cash_in_hand;
     worth= inc+saved+tsv-tsp;
-    cash_in_hand= inc-tsp;
+    cash_in_hand= tsv+inc-tsp;
     if(cash_in_hand<0){
        printf("Your worth: %d\n\nYou earned:%d\nYou Spent: %d\nYou Saved: %d\nCash In hand: YOU ARE BROKE\n", worth,inc, tsp, tsv);
 
@@ -52,7 +52,7 @@ int main()
     scanf("%d %d", &income, &savings);
 
     tin=income;
-   
+    tsv=tsv+savings;
     
     while(1){
         
