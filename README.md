@@ -1,7 +1,7 @@
 **# Spending-Calculator
 C Project
 
-**This project is about calculating you spendings, income, savings and Worth in a month.
+**This project is about calculating your spendings, income, savings and Worth in a month.
 WORTH = Toal Earned + Total Saved-Total Spent;
 
 *Insert your Income and Savings intially then start inserting the amount as you spend, save or earn in the month. 
