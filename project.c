@@ -14,8 +14,8 @@ int spent(){
      worth=worth-sp;
      tsp=tsp+sp;
 
-    if(tsp>tin){
-         printf("Warning: You have spent more than you earned.\n");
+    if(tsp>tin && tsv>0){
+         printf("Warning: You have now spent from your Savings. Slow DOWN ON EXPENSES .\n");
     }
      return tsp;
 }
@@ -33,8 +33,8 @@ int balsheet(int inc, int saved){
     int cash_in_hand;
     worth= inc+tsv-tsp;
     cash_in_hand= inc-tsp;
-    if(cash_in_hand<0 && cash_in_hand<tsv){
-       printf("Your worth: %d\n\nYou earned:%d\nYou Spent: %d\nYou Saved: %d\nCash In hand: YOU ARE BROKE\n\n", worth,inc,tsp,tsv);
+    if(cash_in_hand<0 && cash_in_hand<tsv && tsp-tsv>0){
+       printf("Your worth: %d\n\nYou earned:%d\nYou Spent: %d\nYou Saved: %d (now remaining %d)\nCash In hand: BROKE \n\n", worth,inc,tsp,tsv,tsv+tin-tsp);
     }
     else{
     printf("Your worth: %d\n\nYou earned:%d\nYou Spent: %d\nYou Saved: %d\nCash In hand:%d\n\n", worth,inc,tsp,tsv,cash_in_hand);
@@ -61,7 +61,7 @@ int main()
     
     while(1){
         
-        printf("1. Spendings 2. Savings 3. Balance Sheet: \n");
+        printf("1. Spendings 2. Savings 3. Balance Sheet  0. Exit\n");
         scanf("%d", &n);
     
     switch(n){
